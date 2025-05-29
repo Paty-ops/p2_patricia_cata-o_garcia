@@ -40,7 +40,7 @@ export class CreateSeriesDto {
   readonly director: string;
 
   @ApiProperty()
-  //@IsNotEmpty({ message: 'El campo temporadas es obligatorio' })
+  @IsNotEmpty({ message: 'El campo temporadas es obligatorio' })
   @IsInt({ message: 'El campo temporadas debe ser de tipo cadena' })
   readonly temporadas: number;
 
