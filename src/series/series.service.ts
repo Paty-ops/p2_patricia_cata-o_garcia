@@ -1,4 +1,8 @@
-import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { CreateSeriesDto } from './dto/create-series.dto';
 import { UpdateSeriesDto } from './dto/update-series.dto';
 import { Series } from './entities/series.entity';
@@ -23,6 +27,7 @@ export class SeriesService {
     series.titulo = createSeriesDto.titulo.trim();
     series.sinopsis = createSeriesDto.sinopsis.trim();
     series.director = createSeriesDto.director.trim();
+    series.idiomaPrincipal = createSeriesDto.idiomaPrincipal.trim();
     series.temporadas = createSeriesDto.temporadas;
     series.fechaEstreno = createSeriesDto.fechaEstreno;
     return this.seriesRepository.save(series);

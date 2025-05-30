@@ -40,6 +40,14 @@ export class CreateSeriesDto {
   readonly director: string;
 
   @ApiProperty()
+  @IsNotEmpty({ message: 'El campo Idioma Principal es obligatorio' })
+  @IsString({ message: 'El campo Idioma Principal debe ser de tipo cadena' })
+  @MaxLength(350, {
+    message: 'El campo Idioma Principal no debe ser mayor a 350 caracteres',
+  })
+  readonly idiomaPrincipal: string;
+
+  @ApiProperty()
   @IsNotEmpty({ message: 'El campo temporadas es obligatorio' })
   @IsInt({ message: 'El campo temporadas debe ser de tipo cadena' })
   readonly temporadas: number;
@@ -52,3 +60,7 @@ export class CreateSeriesDto {
   )
   readonly fechaEstreno: Date;
 }
+
+
+
+

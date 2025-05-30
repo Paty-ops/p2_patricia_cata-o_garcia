@@ -27,14 +27,18 @@ export class Series {
   @Column('varchar', { length: 100 })
   director: string;
 
+  @Column('varchar', { length: 350 })
+  idiomaPrincipal: string;
+
   @Column({ type: 'int' })
   temporadas: number;
 
   @Column({ type: 'date', name: 'fecha_estreno' })
   fechaEstreno: Date;
 
+
   @CreateDateColumn({ name: 'fecha_creacion' })
-  fechaCeacion: Date;
+  fechaCeacion: string;
 
   @UpdateDateColumn({ name: 'fecha_modificacion' })
   fechaModificacion: Date;
