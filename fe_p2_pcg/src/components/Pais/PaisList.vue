@@ -4,6 +4,7 @@ import http from '@/plugins/axios'
 import { Button, Dialog } from 'primevue'
 import type { Pais } from '@/models/Pais'
 
+
 const ENDPOINT = 'paises'
 const paises = ref<Pais[]>([])
 const emit = defineEmits(['edit'])
